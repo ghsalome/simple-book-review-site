@@ -1,0 +1,367 @@
+/* =============================================
+   VARIABELEN — pas hier kleuren/fonts aan
+   ============================================= */
+:root {
+    --kleur-achtergrond: #f5f4f0;
+    --kleur-wit:         #ffffff;
+    --kleur-tekst:       #1a1a1a;
+    --kleur-subtiel:     #6b6b6b;
+    --kleur-accent:      #2c5f2e;
+    --kleur-accent-licht:#e8f0e9;
+    --kleur-rand:        #e0ddd6;
+    --kleur-gevaar:      #c0392b;
+
+    --font-hoofd:   'Playfair Display', Georgia, serif;
+    --font-tekst:   'DM Sans', Helvetica, sans-serif;
+
+    --schaduw:      0 2px 12px rgba(0,0,0,0.07);
+    --schaduw-hover:0 6px 24px rgba(0,0,0,0.12);
+    --radius:       10px;
+    --overgang:     0.2s ease;
+}
+
+/* =============================================
+   BASIS
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-tekst);
+    background-color: var(--kleur-achtergrond);
+    color: var(--kleur-tekst);
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-hoofd);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--kleur-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity var(--overgang);
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* =============================================
+   NAVIGATIE / TERUG-LINK
+   ============================================= */
+.terug {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--kleur-subtiel);
+    margin-bottom: 28px;
+}
+
+.terug:hover {
+    color: var(--kleur-tekst);
+    opacity: 1;
+}
+
+/* =============================================
+   INDEX — BOEKENOVERZICHT
+   ============================================= */
+.pagina-titel {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+.pagina-subtitel {
+    text-align: center;
+    color: var(--kleur-subtiel);
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+}
+
+.boeken {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.boek {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow var(--overgang), transform var(--overgang);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.boek:hover {
+    box-shadow: var(--schaduw-hover);
+    transform: translateY(-3px);
+}
+
+.boek img {
+    width: 110px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.boek h2 {
+    font-size: 1rem;
+    font-family: var(--font-hoofd);
+}
+
+.boek p {
+    font-size: 0.82rem;
+    color: var(--kleur-subtiel);
+}
+
+.beoordeling-badge {
+    background: var(--kleur-accent-licht);
+    color: var(--kleur-accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.boek a.knop {
+    margin-top: auto;
+    background: var(--kleur-accent);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: background var(--overgang);
+}
+
+.boek a.knop:hover {
+    background: #1e4220;
+    opacity: 1;
+}
+
+/* =============================================
+   BOEK INFO PAGINA
+   ============================================= */
+.boek-detail {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.boek-header {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.boek-header img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--schaduw-hover);
+    flex-shrink: 0;
+}
+
+.boek-meta h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.boek-meta p {
+    font-size: 0.9rem;
+    color: var(--kleur-subtiel);
+    margin-bottom: 6px;
+}
+
+.boek-meta strong {
+    color: var(--kleur-tekst);
+}
+
+.boek-beschrijving {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--kleur-tekst);
+}
+
+.recensie-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    background: var(--kleur-accent);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background var(--overgang);
+}
+
+.recensie-link:hover {
+    background: #1e4220;
+    opacity: 1;
+}
+
+/* =============================================
+   RECENSIE TABEL
+   ============================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    overflow: hidden;
+}
+
+thead {
+    background: var(--kleur-accent);
+    color: white;
+}
+
+thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--kleur-rand);
+    transition: background var(--overgang);
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: var(--kleur-accent-licht);
+}
+
+tbody td {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    vertical-align: top;
+}
+
+/* =============================================
+   TABEL KNOPPEN
+   ============================================= */
+.tabel-knop {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background var(--overgang);
+    border: none;
+    cursor: pointer;
+}
+
+.tabel-knop.bewerk {
+    background: var(--kleur-accent-licht);
+    color: var(--kleur-accent);
+}
+
+.tabel-knop.bewerk:hover {
+    background: #cfe3d0;
+}
+
+.tabel-knop.verwijder {
+    background: #fde8e8;
+    color: var(--kleur-gevaar);
+}
+
+.tabel-knop.verwijder:hover {
+    background: #f5c6c6;
+}
+
+/* =============================================
+   FORMULIEREN (maak_recensie & edit_recensie)
+   ============================================= */
+.formulier-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 36px 40px;
+}
+
+.formulier-wrapper h1 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+}
+
+.formulier-veld {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.formulier-veld label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--kleur-tekst);
+}
+
+.formulier-veld input,
+.formulier-veld textarea,
+.formulier-veld select {
+    border: 1px solid var(--kleur-rand);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: var(--font-tekst);
+    font-size: 0.9rem;
+    color: var(--kleur-tekst);
+    background: var(--kleur-achtergrond);
+    transition: border-color var(--overgang), box-shadow var(--overgang);
+    outline: none;
+}
+
+.formulier-veld input:focus,
+.formulier-veld textarea:focus,
+.formulier-veld select:focus {
+    border-color: var(--kleur-accent);
+    box-shadow: 0 0 0 3px var(--kleur-accent-licht);
+}
+
+.submit-knop {
+    width: 100%;
+    background: var(--kleur-accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: var(--font-tekst);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background var(--overgang);
+    margin-top: 8px;
+}
+
+.submit-knop:hover {
+    background: #1e4220;
+}

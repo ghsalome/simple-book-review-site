@@ -1,7 +1,8 @@
 <?php
+// CHANGE TO YOUR INFORMATION
 $host = 'localhost';
-$user = 'bit_academy';
-$pass = 'bit_academy';
+$user = 'your_user';
+$pass = 'your_pass';
 $dbname = 'boeken_db';
 
 $conn = new mysqli($host, $user, $pass, $dbname);

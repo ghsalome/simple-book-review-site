@@ -1,7 +1,7 @@
 /* Database aanmaken*/
 CREATE database IF NOT EXISTS boeken_db;
 
-
+USE boeken_db;
 
 /*Tabellen maken*/
 CREATE table gebruikers(
